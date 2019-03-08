@@ -7,7 +7,7 @@ module Rcurtain
     attr_reader :redis
 
     def initialize
-      @redis = Redis.new(:url => Rcurtain.configuration.url)
+      @redis = Redis.new(:url => Rcurtain.configuration.url, :inherit_socket => true)
     end
 
     def opened?(feature, users = [])
